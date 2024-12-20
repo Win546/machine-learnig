@@ -10,6 +10,15 @@ draw.path=(ctx,path,color="black")=>{
     for(let i=1; i < path.length; i++){
         ctx.lineTo(...path[i]);
     }
+    ctx.linceCap="round";
+    ctx.linceJoin="round";
     ctx.stroke();
     
+}
+
+draw.paths=(ctx,paths,color="black")=>{
+    for (const path of paths){
+        
+        draw.path(ctx,path,color);
+    }
 }
